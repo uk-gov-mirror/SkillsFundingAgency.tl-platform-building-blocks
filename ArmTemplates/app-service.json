@@ -204,6 +204,14 @@
         "1.2",
         "1.3"
       ]
+    },
+    "scmMinTlsVersion":{
+      "type": "string",
+      "defaultValue": "1.2",
+      "allowedValues":[
+        "1.2",
+        "1.3"
+      ]
     }
   },
   "variables": {
@@ -238,7 +246,8 @@
           "ftpsState": "[parameters('ftpsState')]",
           "healthCheckPath": "[parameters('healthCheckPath')]",
           "minTlsCipherSuite": "[parameters('minTlsCipherSuite')]",
-          "MinTlsVersion": "[parameters('minTlsVersion')]"
+          "MinTlsVersion": "[parameters('minTlsVersion')]",
+          "scmMinTlsVersion": "[parameters('scmMinTlsVersion')]"
         },
         "httpsOnly": true
       },
@@ -263,7 +272,10 @@
               "ipSecurityRestrictions": "[parameters('ipSecurityRestrictions')]",
               "use32BitWorkerProcess": "[parameters('use32BitWorkerProcess')]",
               "http20Enabled": "[parameters('http20Enabled')]",
-              "ftpsState": "[parameters('ftpsState')]"
+              "ftpsState": "[parameters('ftpsState')]",
+              "minTlsCipherSuite": "[parameters('minTlsCipherSuite')]",
+              "minTlsVersion": "[parameters('minTlsVersion')]",
+              "scmMinTlsVersion": "[parameters('scmMinTlsVersion')]"
             },
             "httpsOnly": true
           },
